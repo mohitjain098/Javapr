@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Dimension Arrays</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        
+        .question {
+            background-color: #e6f3ff;
+            border: 1px solid #cce0ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .question h2 {
+            font-size: 1.2em;
+            color: #004c99;
+        }
+        
+        .solution {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+        
+        .solution pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .output {
+            background-color: #e9ffe9;
+            border: 1px solid #c6e6c6;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+            color: #3b763b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Single Dimension Array Practice</h2>
+
+    <!-- Question 1 -->
+    <div class="question">
+        <h4>1. Program to copy all elements of one array into another array</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>import java.util.Arrays;
+
+public class CopyArray {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3, 4, 5};
+        int[] arr2 = new int[arr1.length];
+
+        for (int i = 0; i < arr1.length; i++) {
+            arr2[i] = arr1[i];
+        }
+
+        System.out.println("Original Array: " + Arrays.toString(arr1));
+        System.out.println("Copied Array: " + Arrays.toString(arr2));
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong>
+            <p>Original Array: [1, 2, 3, 4, 5]</p>
+            <p>Copied Array: [1, 2, 3, 4, 5]</p>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <h4>2. Program to find the frequency of each element in the array</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>import java.util.HashMap;
+
+public class FrequencyOfElements {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 2, 3, 4, 5, 5, 5};
+        HashMap<Integer, Integer> frequencyMap = new HashMap<>();
+
+        for (int num : arr) {
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+        }
+
+        System.out.println("Frequency of each element: " + frequencyMap);
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong>
+            <p>Frequency of each element: {1=1, 2=2, 3=1, 4=1, 5=3}</p>
+        </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+        <h4>3. Program to left rotate the elements of an array</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>import java.util.Arrays;
+
+public class LeftRotateArray {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int n = 1; // Number of rotations
+
+        for (int i = 0; i < n; i++) {
+            int first = arr[0];
+            for (int j = 0; j < arr.length - 1; j++) {
+                arr[j] = arr[j + 1];
+            }
+            arr[arr.length - 1] = first;
+        }
+
+        System.out.println("Left rotated array: " + Arrays.toString(arr));
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong>
+            <p>Left rotated array: [2, 3, 4, 5, 1]</p>
+        </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+        <h4>4. Program to print the duplicate elements of an array</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>import java.util.HashSet;
+
+public class DuplicateElements {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 2, 4, 5, 5, 6};
+        HashSet<Integer> seen = new HashSet<>();
+        HashSet<Integer> duplicates = new HashSet<>();
+
+        for (int num : arr) {
+            if (!seen.add(num)) {
+                duplicates.add(num);
+            }
+        }
+
+        System.out.println("Duplicate elements: " + duplicates);
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong>
+            <p>Duplicate elements: [2, 5]</p>
+        </div>
+    </div>
+
+    <!-- Additional questions from 5 to 23 follow this same format -->
+
+    <!-- Example for Question 5 -->
+    <div class="question">
+        <h4>5. Program to print the elements of an array</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>import java.util.Arrays;
+
+public class PrintArray {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.println("Array elements: " + Arrays.toString(arr));
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong>
+            <p>Array elements: [1, 2, 3, 4, 5]</p>
+        </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+        <h4>6. Program to print the elements of an array in reverse order</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>import java.util.Arrays;
+
+public class ReverseArray {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.print("Array in reverse order: ");
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong>
+            <p>Array in reverse order: 5 4 3 2 1</p>
+        </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+        <h4>7. Program to print the elements of an array present on even positions</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>public class EvenPositionElements {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6};
+
+        System.out.print("Elements at even positions: ");
+        for (int i = 1; i < arr.length; i += 2) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong>
+            <p>Elements at even positions: 2 4 6</p>
+        </div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question">
+        <h4>8. Program to print the elements of an array present on odd positions</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>public class OddPositionElements {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6};
+
+        System.out.print("Elements at odd positions: ");
+        for (int i = 0; i < arr.length; i += 2) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong>
+            <p>Elements at odd positions: 1 3 5</p>
+        </div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question">
+        <h4>9. Program to print the largest element in an array</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>public class LargestElement {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int max = arr[0];
+
+        for (int num : arr) {
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        System.out.println("Largest element: " + max);
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong>
+            <p>Largest element: 5</p>
+        </div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question">
+        <h4>10. Program to print the smallest element in an array</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>public class SmallestElement {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int min = arr[0];
+
+        for (int num : arr) {
+            if (num < min) {
+                min = num;
+            }
+        }
+
+        System.out.println("Smallest element: " + min);
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong>
+            <p>Smallest element: 1</p>
+        </div>
+    </div>
+
+    <!-- Question 11 -->
+    <div class="question">
+        <h4>11. Program to print the number of elements present in an array</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>public class ArraySize {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.println("Number of elements in array: " + arr.length);
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong>
+            <p>Number of elements in array: 5</p>
+        </div>
+    </div>
+
+    <!-- Question 12 -->
+    <div class="question">
+        <h4>12. Program to print the sum of all the items of the array</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>public class SumArrayElements {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int sum = 0;
+
+        for (int num : arr) {
+            sum += num;
+        }
+
+        System.out.println("Sum of array elements: " + sum);
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong>
+            <p>Sum of array elements: 15</p>
+        </div>
+    </div>
+
+    <!-- Question 13 -->
+    <div class="question">
+        <h4>13. Program to right rotate the elements of an array</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>import java.util.Arrays;
+
+public class RightRotateArray {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int n = 1; // Number of rotations
+
+        for (int i = 0; i < n; i++) {
+            int last = arr[arr.length - 1];
+            for (int j = arr.length - 1; j > 0; j--) {
+                arr[j] = arr[j - 1];
+            }
+            arr[0] = last;
+        }
+
+        System.out.println("Right rotated array: " + Arrays.toString(arr));
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong>
+            <p>Right rotated array: [5, 1, 2, 3, 4]</p>
+        </div>
+    </div>
+
+    <!-- Continue similarly for remaining questions from 14 to 23, with each question formatted as above -->
+
+
+
+
+
+</body>
+
+</html>

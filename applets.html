@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applet Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        
+        .question {
+            background-color: #e6f3ff;
+            border: 1px solid #cce0ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .question h2 {
+            font-size: 1.2em;
+            color: #004c99;
+        }
+        
+        .solution {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+        
+        .solution pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .output {
+            background-color: #e9ffe9;
+            border: 1px solid #c6e6c6;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+            color: #3b763b;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Applet Programming Practice</h2>
+
+    <!-- Question 1 -->
+    <div class="question">
+        <h4>1. Create an Applet showing the string "Hello World" which is embedded in the HTML page</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class HelloWorldApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawString("Hello World", 20, 20);
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong> Displays "Hello World" on the applet.
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <h4>2. Create an Applet showing the string "Hello World" which is executed by an appletviewer</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class HelloWorldViewerApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawString("Hello World", 20, 20);
+    }
+}
+
+// To execute by appletviewer, use:
+// appletviewer HelloWorldViewerApplet.java
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong> Displays "Hello World" when run with appletviewer.
+        </div>
+    </div>
+
+    <!-- Repeat similar structure for all other questions -->
+    <!-- Question 3 -->
+    <div class="question">
+        <h4>3. Create an Applet in Java to draw a circle</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class DrawCircleApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawOval(50, 50, 100, 100);  // Draw circle (oval with equal width and height)
+    }
+}
+                </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong> Draws a circle on the applet.
+        </div>
+    </div>
+
+
+    <!-- Question 4 -->
+    <div class="question">
+        <h4>4. Create an Applet in Java to draw a polygon</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    import java.applet.Applet;
+    import java.awt.Graphics;
+    
+    public class DrawPolygonApplet extends Applet {
+        public void paint(Graphics g) {
+            int[] xPoints = {50, 100, 150, 200, 250};
+            int[] yPoints = {50, 100, 50, 100, 50};
+            g.drawPolygon(xPoints, yPoints, 5);  // Draw polygon with 5 points
+        }
+    }
+                    </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong> Draws a polygon on the applet.
+        </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+        <h4>5. Create an Applet in Java to draw a rectangle</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    import java.applet.Applet;
+    import java.awt.Graphics;
+    
+    public class DrawRectangleApplet extends Applet {
+        public void paint(Graphics g) {
+            g.drawRect(50, 50, 200, 100);  // Draw rectangle
+        }
+    }
+                    </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong> Draws a rectangle on the applet.
+        </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+        <h4>6. Create an Applet in Java to draw a square</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    import java.applet.Applet;
+    import java.awt.Graphics;
+    
+    public class DrawSquareApplet extends Applet {
+        public void paint(Graphics g) {
+            g.drawRect(50, 50, 100, 100);  // Draw square
+        }
+    }
+                    </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong> Draws a square on the applet.
+        </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+        <h4>7. Create an Applet in Java to draw 4 concentric circles</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    import java.applet.Applet;
+    import java.awt.Graphics;
+    
+    public class ConcentricCirclesApplet extends Applet {
+        public void paint(Graphics g) {
+            for (int i = 0; i < 4; i++) {
+                g.drawOval(50 + i * 20, 50 + i * 20, 100 - i * 40, 100 - i * 40);
+            }
+        }
+    }
+                    </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong> Draws 4 concentric circles on the applet.
+        </div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question">
+        <h4>8. Create an Applet in Java to draw a line</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    import java.applet.Applet;
+    import java.awt.Graphics;
+    
+    public class DrawLineApplet extends Applet {
+        public void paint(Graphics g) {
+            g.drawLine(50, 50, 200, 200);  // Draw line from (50, 50) to (200, 200)
+        }
+    }
+                    </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong> Draws a line on the applet from (50, 50) to (200, 200).
+        </div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question">
+        <h4>9. Create an Applet in Java to draw an oval</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    import java.applet.Applet;
+    import java.awt.Graphics;
+    
+    public class DrawOvalApplet extends Applet {
+        public void paint(Graphics g) {
+            g.drawOval(50, 50, 200, 100);  // Draw oval
+        }
+    }
+                    </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong> Draws an oval on the applet.
+        </div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question">
+        <h4>10. Create an Applet in Java to draw an arc</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    import java.applet.Applet;
+    import java.awt.Graphics;
+    
+    public class DrawArcApplet extends Applet {
+        public void paint(Graphics g) {
+            g.drawArc(50, 50, 200, 100, 0, 180);  // Draw arc from 0 to 180 degrees
+        }
+    }
+                    </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output:</strong> Draws an arc on the applet from 0 to 180 degrees.
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaHub - 2D Arrays</title>
+    <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/javascript"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        
+        .question {
+            background-color: #e6f3ff;
+            border: 1px solid #cce0ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .question h2 {
+            font-size: 1.2em;
+            color: #004c99;
+        }
+        
+        .solution {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+        
+        .solution pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .output {
+            background-color: #e9ffe9;
+            border: 1px solid #c6e6c6;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+            color: #3b763b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Java Programs for 2D Arrays</h2>
+
+    <div class="question">
+        <h2>1. Program to Print a Matrix</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.util.Scanner;
+
+public class PrintMatrix {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of rows and columns:");
+        int rows = scanner.nextInt();
+        int cols = scanner.nextInt();
+        int[][] matrix = new int[rows][cols];
+
+        System.out.println("Enter matrix elements:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        System.out.println("Matrix is:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+        </code></pre>
+            <div class="output">
+                <strong>Example Input:</strong><br> 2
+                <br> 3
+                <br> 1 2 3<br> 4 5 6<br>
+                <strong>Example Output:</strong><br> Matrix is:<br> 1 2 3 <br> 4 5 6 <br>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <h2>2. Program to Add Two Matrices</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.util.Scanner;
+
+public class AddMatrices {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of rows and columns:");
+        int rows = scanner.nextInt();
+        int cols = scanner.nextInt();
+        int[][] matrix1 = new int[rows][cols];
+        int[][] matrix2 = new int[rows][cols];
+        int[][] sum = new int[rows][cols];
+
+        System.out.println("Enter elements of first matrix:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix1[i][j] = scanner.nextInt();
+            }
+        }
+
+        System.out.println("Enter elements of second matrix:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix2[i][j] = scanner.nextInt();
+            }
+        }
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                sum[i][j] = matrix1[i][j] + matrix2[i][j];
+            }
+        }
+
+        System.out.println("Sum of the two matrices is:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(sum[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+        </code></pre>
+            <div class="output">
+                <strong>Example Input:</strong><br> 2
+                <br> 2
+                <br> 1 2<br> 3 4<br> 5 6<br> 7 8<br>
+                <strong>Example Output:</strong><br> Sum of the two matrices is:<br> 6 8 <br> 10 12 <br>
+            </div>
+        </div>
+    </div>
+    <div class="question">
+        <h2>3. Program to Transpose a Matrix</h2>
+        <div class="solution">
+            <h3>Solution</h3> <pre><code>
+import java.util.Scanner;
+
+public class TransposeMatrix {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of rows and columns:");
+        int rows = scanner.nextInt();
+        int cols = scanner.nextInt();
+        int[][] matrix = new int[rows][cols];
+        int[][] transpose = new int[cols][rows];
+
+        System.out.println("Enter matrix elements:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                transpose[j][i] = matrix[i][j];
+            }
+        }
+
+        System.out.println("Transpose of the matrix is:");
+        for (int i = 0; i < cols; i++) {
+            for (int j = 0; j < rows; j++) {
+                System.out.print(transpose[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+        </code></pre>
+            <div class="output">
+                <strong>Example Input:</strong><br> 2
+                <br> 3
+                <br> 1 2 3<br> 4 5 6<br>
+                <strong>Example Output:</strong><br> Transpose of the matrix is:<br> 1 4 <br> 2 5 <br> 3 6 <br>
+            </div>
+        </div>
+    </div>
+    <div class="question">
+        <h2>4. Program to Multiply Two Matrices</h2>
+        <div class="solution">
+            <h3>Solution</h3><pre><code>
+import java.util.Scanner;
+
+public class MultiplyMatrices {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of rows and columns for first matrix:");
+        int rows1 = scanner.nextInt();
+        int cols1 = scanner.nextInt();
+        int[][] matrix1 = new int[rows1][cols1];
+
+        System.out.println("Enter number of columns for second matrix:");
+        int cols2 = scanner.nextInt();
+        int[][] matrix2 = new int[cols1][cols2];
+        int[][] product = new int[rows1][cols2];
+
+        System.out.println("Enter elements of first matrix:");
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < cols1; j++) {
+                matrix1[i][j] = scanner.nextInt();
+            }
+        }
+
+        System.out.println("Enter elements of second matrix:");
+        for (int i = 0; i < cols1; i++) {
+            for (int j = 0; j < cols2; j++) {
+                matrix2[i][j] = scanner.nextInt();
+            }
+        }
+
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < cols2; j++) {
+                for (int k = 0; k < cols1; k++) {
+                    product[i][j] += matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+
+        System.out.println("Product of the two matrices is:");
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < cols2; j++) {
+                System.out.print(product[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+        </code></pre>
+            <div class="output">
+                <strong>Example Input:</strong><br> 2
+                <br> 3
+                <br> 1 2 3<br> 4 5 6<br> 3
+                <br> 2
+                <br> 1 0<br> 0 1<br> 1 1<br>
+                <strong>Example Output:</strong><br> Product of the two matrices is:<br> 10 15 <br> 30 45 <br>
+            </div>
+        </div>
+    </div>
+    <div class="question">
+        <h2>5. Program to Find the Maximum Element in a Matrix</h2>
+        <div class="solution">
+            <h3>Solution</h3> <pre><code>
+import java.util.Scanner;
+
+public class MaxElementInMatrix {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of rows and columns for the matrix:");
+        int rows = scanner.nextInt();
+        int cols = scanner.nextInt();
+        int[][] matrix = new int[rows][cols];
+
+        System.out.println("Enter matrix elements:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        int max = matrix[0][0];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] > max) {
+                    max = matrix[i][j];
+                }
+            }
+        }
+
+        System.out.println("Maximum element in the matrix is: " + max);
+    }
+}
+        </code></pre>
+            <div class="output">
+                <strong>Example Input:</strong><br> 2
+                <br> 3
+                <br> 1 2 3<br> 4 5 6<br>
+                <strong>Example Output:</strong><br> Maximum element in the matrix is: 6
+            </div>
+        </div>
+    </div>
+    <div class="question">
+        <h2>6. Program to Find the Minimum Element in a Matrix</h2>
+        <div class="solution">
+            <h3>Solution</h3> <pre><code>
+import java.util.Scanner;
+
+public class MinElementInMatrix {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of rows and columns for the matrix:");
+        int rows = scanner.nextInt();
+        int cols = scanner.nextInt();
+        int[][] matrix = new int[rows][cols];
+
+        System.out.println("Enter matrix elements:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        int min = matrix[0][0];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] < min) {
+                    min = matrix[i][j];
+                }
+            }
+        }
+
+        System.out.println("Minimum element in the matrix is: " + min);
+    }
+}
+        </code></pre>
+            <div class="output">
+                <strong>Example Input:</strong><br> 2
+                <br> 3
+                <br> 1 2 3<br> 4 5 6<br>
+                <strong>Example Output:</strong><br> Minimum element in the matrix is: 1
+            </div>
+        </div>
+    </div>
+    <div class="question">
+        <h2>7. Program to Check if a Matrix is Symmetric</h2>
+        <div class="solution">
+            <h3>Solution</h3><pre><code>
+import java.util.Scanner;
+
+public class SymmetricMatrix {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the size of the square matrix:");
+        int n = scanner.nextInt();
+        int[][] matrix = new int[n][n];
+
+        System.out.println("Enter matrix elements:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        boolean isSymmetric = true;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] != matrix[j][i]) {
+                    isSymmetric = false;
+                    break;
+                }
+            }
+        }
+
+        if (isSymmetric) {
+            System.out.println("The matrix is symmetric.");
+        } else {
+            System.out.println("The matrix is not symmetric.");
+        }
+    }
+}
+        </code></pre>
+            <div class="output">
+                <strong>Example Input:</strong><br> 2
+                <br> 1 2<br> 2 1<br>
+                <strong>Example Output:</strong><br> The matrix is symmetric.
+            </div>
+        </div>
+    </div>
+    <div class="question">
+        <div class="solution">
+            <h3>Solution</h3>
+            <h2>8. Program to Sort Rows of a Matrix</h2>
+            <pre><code>
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SortRowsOfMatrix {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of rows and columns:");
+        int rows = scanner.nextInt();
+        int cols = scanner.nextInt();
+        int[][] matrix = new int[rows][cols];
+
+        System.out.println("Enter matrix elements:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        for (int i = 0; i < rows; i++) {
+            Arrays.sort(matrix[i]);
+        }
+
+        System.out.println("Sorted rows of the matrix are:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+        </code></pre>
+            <div class="output">
+                <strong>Example Input:</strong><br> 3
+                <br> 3
+                <br> 3 2 1<br> 6 5 4<br> 9 8 7<br>
+                <strong>Example Output:</strong><br> Sorted rows of the matrix are:<br> 1 2 3 <br> 4 5 6 <br> 7 8 9 <br>
+            </div>
+        </div>
+    </div>
+    <div class="question">
+        <h2>9. Program to Search for an Element in a Matrix</h2>
+        <div class="solution">
+            <h3>Solution</h3><pre><code>
+import java.util.Scanner;
+
+public class SearchElementInMatrix {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of rows and columns:");
+        int rows = scanner.nextInt();
+        int cols = scanner.nextInt();
+        int[][] matrix = new int[rows][cols];
+
+        System.out.println("Enter matrix elements:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        System.out.println("Enter element to search:");
+        int target = scanner.nextInt();
+        boolean found = false;
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] == target) {
+                    System.out.println("Element found at: (" + i + ", " + j + ")");
+                    found = true;
+                }
+            }
+        }
+
+        if (!found) {
+            System.out.println("Element not found in the matrix.");
+        }
+    }
+}
+        </code></pre>
+            <div class="output">
+                <strong>Example Input:</strong><br> 2
+                <br> 3
+                <br> 1 2 3<br> 4 5 6<br> 5
+                <br>
+                <strong>Example Output:</strong><br> Element found at: (1, 1)
+            </div>
+        </div>
+    </div>
+    <div class="question">
+        <div class="solution">
+            <h3>Solution</h3>
+            <h2>10. Program to Rotate a Matrix 90 Degrees Clockwise</h2>
+            <pre><code>
+    import java.util.Scanner;
+    
+    public class RotateMatrix {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter number of rows and columns (square matrix):");
+            int n = scanner.nextInt();
+            int[][] matrix = new int[n][n];
+    
+            System.out.println("Enter matrix elements:");
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    matrix[i][j] = scanner.nextInt();
+                }
+            }
+    
+            // Rotate the matrix 90 degrees clockwise
+            for (int i = 0; i < n / 2; i++) {
+                for (int j = i; j < n - i - 1; j++) {
+                    int temp = matrix[i][j];
+                    matrix[i][j] = matrix[n - j - 1][i];
+                    matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1];
+                    matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1];
+                    matrix[j][n - i - 1] = temp;
+                }
+            }
+    
+            System.out.println("Matrix after rotating 90 degrees clockwise:");
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    System.out.print(matrix[i][j] + " ");
+                }
+                System.out.println();
+            }
+        }
+    }
+        </code></pre>
+            <div class="output">
+                <strong>Example Input:</strong><br> 3
+                <br> 1 2 3<br> 4 5 6<br> 7 8 9<br>
+                <strong>Example Output:</strong><br> Matrix after rotating 90 degrees clockwise:<br> 7 4 1 <br> 8 5 2 <br> 9 6 3 <br>
+            </div>
+        </div>
+    </div>
+    <div class="question">
+        <h2>11. Program to Count the Number of Occurrences of an Element in a Matrix</h2>
+        <div class="solution">
+            <h3>Solution</h3> <pre><code>
+    import java.util.Scanner;
+    
+    public class CountOccurrencesInMatrix {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter number of rows and columns:");
+            int rows = scanner.nextInt();
+            int cols = scanner.nextInt();
+            int[][] matrix = new int[rows][cols];
+    
+            System.out.println("Enter matrix elements:");
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    matrix[i][j] = scanner.nextInt();
+                }
+            }
+    
+            System.out.println("Enter element to count occurrences:");
+            int target = scanner.nextInt();
+            int count = 0;
+    
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    if (matrix[i][j] == target) {
+                        count++;
+                    }
+                }
+            }
+    
+            System.out.println("Element " + target + " occurs " + count + " times in the matrix.");
+        }
+    }
+        </code></pre>
+            <div class="output">
+                <strong>Example Input:</strong><br> 3
+                <br> 3
+                <br> 1 2 3<br> 1 4 1<br> 5 1 6<br> 1
+                <br>
+                <strong>Example Output:</strong><br> Element 1 occurs 4 times in the matrix.
+            </div>
+        </div>
+    </div>
+    <div class="question">
+        <h2>12. Program to Print the Border Elements of a Matrix</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    import java.util.Scanner;
+    
+    public class BorderElementsOfMatrix {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter number of rows and columns:");
+            int rows = scanner.nextInt();
+            int cols = scanner.nextInt();
+            int[][] matrix = new int[rows][cols];
+    
+            System.out.println("Enter matrix elements:");
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    matrix[i][j] = scanner.nextInt();
+                }
+            }
+    
+            System.out.println("Border elements of the matrix are:");
+            for (int j = 0; j < cols; j++) {
+                System.out.print(matrix[0][j] + " "); // Top row
+            }
+            for (int i = 1; i < rows - 1; i++) {
+                System.out.print(matrix[i][cols - 1] + " "); // Right column
+            }
+            for (int j = cols - 1; j >= 0; j--) {
+                if (rows > 1) {
+                    System.out.print(matrix[rows - 1][j] + " "); // Bottom row
+                }
+            }
+            for (int i = rows - 2; i > 0; i--) {
+                if (cols > 1) {
+                    System.out.print(matrix[i][0] + " "); // Left column
+                }
+            }
+        }
+    }
+        </code></pre>
+            <div class="output">
+                <strong>Example Input:</strong><br> 3
+                <br> 3
+                <br> 1 2 3<br> 4 5 6<br> 7 8 9<br>
+                <strong>Example Output:</strong><br> Border elements of the matrix are:<br> 1 2 3 <br> 6 <br> 7 8 9 <br> 4 <br>
+            </div>
+        </div>
+    </div>
+    <div class="question">
+        <h2>13. Program to Print the Diagonal Elements of a Matrix</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    import java.util.Scanner;
+    
+    public class DiagonalElementsOfMatrix {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter number of rows and columns (square matrix):");
+            int n = scanner.nextInt();
+            int[][] matrix = new int[n][n];
+    
+            System.out.println("Enter matrix elements:");
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    matrix[i][j] = scanner.nextInt();
+                }
+            }
+    
+            System.out.println("Diagonal elements of the matrix are:");
+            for (int i = 0; i < n; i++) {
+                System.out.print(matrix[i][i] + " "); // Primary diagonal
+            }
+            System.out.println();
+            for (int i = 0; i < n; i++) {
+                System.out.print(matrix[i][n - i - 1] + " "); // Secondary diagonal
+            }
+        }
+    }
+        </code></pre>
+            <div class="output">
+                <strong>Example Input:</strong><br> 3
+                <br> 1 2 3<br> 4 5 6<br> 7 8 9<br>
+                <strong>Example Output:</strong><br> Diagonal elements of the matrix are:<br> 1 5 9 <br> 3 5 7 <br>
+            </div>
+        </div>
+
+</body>
+
+</html>

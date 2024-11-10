@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Packages Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        
+        .question {
+            background-color: #e6f3ff;
+            border: 1px solid #cce0ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .question h2 {
+            font-size: 1.2em;
+            color: #004c99;
+        }
+        
+        .solution {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+        
+        .solution pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .output {
+            background-color: #e9ffe9;
+            border: 1px solid #c6e6c6;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+            color: #3b763b;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Java Packages Examples</h2>
+    <div class="question">
+        <h3>1. Create a Java program to access the java.util.Date class through import keyword and print the current date of the system.</h3>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.util.Date;
+
+public class CurrentDateImport {
+    public static void main(String[] args) {
+        Date date = new Date();
+        System.out.println("Current date: " + date);
+    }
+}
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> Current date: Sat Nov 03 12:45:32 UTC 2024
+            </div>
+        </div>
+
+        <h3>2. Create a Java program to access the java.util.Date class through qualified way and print the current date of the system.</h3>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+public class CurrentDateQualified {
+    public static void main(String[] args) {
+        java.util.Date date = new java.util.Date();
+        System.out.println("Current date: " + date);
+    }
+}
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> Current date: Sat Nov 03 12:45:32 UTC 2024
+            </div>
+        </div>
+
+        <h3>3. Create a Java program to access the java.util.Date class through import keyword and print the current date of the system but inherit the Date class.</h3>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.util.Date;
+
+class CustomDate extends Date {
+    public void printCurrentDate() {
+        System.out.println("Current date: " + this);
+    }
+}
+
+public class InheritedDateImport {
+    public static void main(String[] args) {
+        CustomDate customDate = new CustomDate();
+        customDate.printCurrentDate();
+    }
+}
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> Current date: Sat Nov 03 12:45:32 UTC 2024
+            </div>
+        </div>
+
+        <h3>4. Create a Java program to access the java.util.Date class through qualified way and print the current date of the system but inherit the Date class.</h3>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+class CustomDateQualified extends java.util.Date {
+    public void printCurrentDate() {
+        System.out.println("Current date: " + this);
+    }
+}
+
+public class InheritedDateQualified {
+    public static void main(String[] args) {
+        CustomDateQualified customDate = new CustomDateQualified();
+        customDate.printCurrentDate();
+    }
+}
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> Current date: Sat Nov 03 12:45:32 UTC 2024
+            </div>
+        </div>
+
+        <h3>5. Create a Java program to create a package with multiple default classes.</h3>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+package mypackage;
+
+class ClassOne {
+    public void display() {
+        System.out.println("Class One");
+    }
+}
+
+class ClassTwo {
+    public void display() {
+        System.out.println("Class Two");
+    }
+}
+
+public class PackageExample {
+    public static void main(String[] args) {
+        ClassOne obj1 = new ClassOne();
+        ClassTwo obj2 = new ClassTwo();
+        obj1.display();
+        obj2.display();
+    }
+}
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> Class One<br>Class Two
+            </div>
+        </div>
+
+        <h3>6. Create a Java program to create a package with 4 public classes, create the object in another file and call the function created in those classes.</h3>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+// In the package 'mypackage':
+package mypackage;
+
+public class ClassOne {
+    public void display() {
+        System.out.println("Class One");
+    }
+}
+
+public class ClassTwo {
+    public void display() {
+        System.out.println("Class Two");
+    }
+}
+
+public class ClassThree {
+    public void display() {
+        System.out.println("Class Three");
+    }
+}
+
+public class ClassFour {
+    public void display() {
+        System.out.println("Class Four");
+    }
+}
+                </code></pre>
+            <pre><code>
+// In another file:
+import mypackage.*;
+
+public class TestPackage {
+    public static void main(String[] args) {
+        ClassOne obj1 = new ClassOne();
+        ClassTwo obj2 = new ClassTwo();
+        ClassThree obj3 = new ClassThree();
+        ClassFour obj4 = new ClassFour();
+        obj1.display();
+        obj2.display();
+        obj3.display();
+        obj4.display();
+    }
+}
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> Class One<br>Class Two<br>Class Three<br>Class Four
+            </div>
+        </div>
+
+        <h3>7. Write a Java program to perform employee payroll processing using packages.</h3>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+// In the package 'employee':
+package employee;
+
+public class Emp {
+    String name;
+    int empid;
+    String category;
+    double bpay, hra, da, npay, pf, grosspay, incometax, allowance;
+
+    public void calculatePayroll() {
+        grosspay = bpay + hra + da + allowance;
+        npay = grosspay - (pf + incometax);
+    }
+}
+
+// In another file:
+import employee.Emp;
+
+public class Emppay {
+    public static void main(String[] args) {
+        Emp e = new Emp();
+        e.name = "John Doe";
+        e.empid = 101;
+        e.category = "Manager";
+        e.bpay = 50000;
+        e.hra = 10000;
+        e.da = 5000;
+        e.pf = 2500;
+        e.incometax = 5000;
+        e.allowance = 3000;
+        
+        e.calculatePayroll();
+        System.out.println("Net Pay: " + e.npay);
+    }
+}
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> Net Pay: 48500.0
+            </div>
+        </div>
+
+        <h3>8. Create a Java program to create a package with a public class and protected members to be accessed in another class.</h3>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+package mypackage;
+
+public class ProtectedClass {
+    protected void display() {
+        System.out.println("Protected Method in Public Class");
+    }
+}
+
+// In another file:
+import mypackage.ProtectedClass;
+
+public class TestProtected {
+    public static void main(String[] args) {
+        ProtectedClass obj = new ProtectedClass();
+        obj.display();
+    }
+}
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> Protected Method in Public Class
+            </div>
+        </div>
+
+        <h3>9. Create a Java program to create a nested package i.e. c4.sample with public class and protected members to be accessed in another class.</h3>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+// In the package 'c4.sample':
+package c4.sample;
+
+public class NestedClass {
+    protected void display() {
+        System.out.println("Protected Method in Nested Package");
+    }
+}
+
+// In another file:
+import c4.sample.NestedClass;
+
+public class TestNested {
+    public static void main(String[] args) {
+        NestedClass obj = new NestedClass();
+        obj.display();
+    }
+}
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> Protected Method in Nested Package
+            </div>
+        </div>
+
+        <h3>10. Create a Java program to create a package with public class and public members to be accessed in another class.</h3>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+package mypackage;
+
+public class PublicClass {
+    public void display() {
+        System.out.println("Public Method in Public Class");
+    }
+}
+
+// In another file:
+import mypackage.PublicClass;
+
+public class TestPublic {
+    public static void main(String[] args) {
+        PublicClass obj = new PublicClass();
+        obj.display();
+    }
+}
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> Public Method in Public Class
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

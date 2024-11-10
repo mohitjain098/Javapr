@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Applet Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        
+        .question {
+            background-color: #e6f3ff;
+            border: 1px solid #cce0ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .question h2 {
+            font-size: 1.2em;
+            color: #004c99;
+        }
+        
+        .solution {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+        
+        .solution pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .output {
+            background-color: #e9ffe9;
+            border: 1px solid #c6e6c6;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+            color: #3b763b;
+        }
+    </style>
+</head>
+</head>
+
+<body>
+
+    <h1>Java Applet Examples</h1>
+
+    <div class="question">
+        <h2>1. Enter the character from user using InputStreamReader</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.applet.Applet;
+import java.awt.*;
+import java.io.*;
+
+public class InputCharacterApplet extends Applet {
+    String input;
+
+    public void init() {
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            input = "Enter a character: " + (char) reader.read();
+        } catch (IOException e) {
+            input = "Error reading input.";
+        }
+    }
+
+    public void paint(Graphics g) {
+        g.drawString(input, 20, 20);
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Displays the entered character on the applet.<br> Example: If the user enters 'A', the output will be: "Enter a character: A"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>2. Enter the string from user using BufferedStreamReader</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.applet.Applet;
+import java.awt.*;
+import java.io.*;
+
+public class InputStringApplet extends Applet {
+    String input;
+
+    public void init() {
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            input = "Entered string: " + reader.readLine();
+        } catch (IOException e) {
+            input = "Error reading input.";
+        }
+    }
+
+    public void paint(Graphics g) {
+        g.drawString(input, 20, 20);
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Displays the entered string on the applet.<br> Example: If the user enters "Hello, World!", the output will be: "Entered string: Hello, World!"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>3. Enter the integer from user using Scanner class</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.applet.Applet;
+import java.awt.*;
+import java.util.Scanner;
+
+public class InputIntegerApplet extends Applet {
+    int input;
+
+    public void init() {
+        Scanner scanner = new Scanner(System.in);
+        input = scanner.nextInt();
+    }
+
+    public void paint(Graphics g) {
+        g.drawString("Entered integer: " + input, 20, 20);
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Displays the entered integer on the applet.<br> Example: If the user enters 42, the output will be: "Entered integer: 42"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>4. Enter the float from user using Scanner class</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.applet.Applet;
+import java.awt.*;
+import java.util.Scanner;
+
+public class InputFloatApplet extends Applet {
+    float input;
+
+    public void init() {
+        Scanner scanner = new Scanner(System.in);
+        input = scanner.nextFloat();
+    }
+
+    public void paint(Graphics g) {
+        g.drawString("Entered float: " + input, 20, 20);
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Displays the entered float on the applet.<br> Example: If the user enters 3.14, the output will be: "Entered float: 3.14"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>5. Enter the double from user using Scanner class</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.applet.Applet;
+import java.awt.*;
+import java.util.Scanner;
+
+public class InputDoubleApplet extends Applet {
+    double input;
+
+    public void init() {
+        Scanner scanner = new Scanner(System.in);
+        input = scanner.nextDouble();
+    }
+
+    public void paint(Graphics g) {
+        g.drawString("Entered double: " + input, 20, 20);
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Displays the entered double on the applet.<br> Example: If the user enters 9.87654321, the output will be: "Entered double: 9.87654321"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>6. Enter the boolean from user using Scanner class</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.applet.Applet;
+import java.awt.*;
+import java.util.Scanner;
+
+public class InputBooleanApplet extends Applet {
+    boolean input;
+
+    public void init() {
+        Scanner scanner = new Scanner(System.in);
+        input = scanner.nextBoolean();
+    }
+
+    public void paint(Graphics g) {
+        g.drawString("Entered boolean: " + input, 20, 20);
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Displays the entered boolean on the applet.<br> Example: If the user enters true, the output will be: "Entered boolean: true"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>7. Enter the short integer from user using Scanner class</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.applet.Applet;
+import java.awt.*;
+import java.util.Scanner;
+
+public class InputShortApplet extends Applet {
+    short input;
+
+    public void init() {
+        Scanner scanner = new Scanner(System.in);
+        input = scanner.nextShort();
+    }
+
+    public void paint(Graphics g) {
+        g.drawString("Entered short integer: " + input, 20, 20);
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Displays the entered short integer on the applet.<br> Example: If the user enters 150, the output will be: "Entered short integer: 150"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>8. Enter the long integer from user using Scanner class</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.applet.Applet;
+import java.awt.*;
+import java.util.Scanner;
+
+public class InputLongApplet extends Applet {
+    long input;
+
+    public void init() {
+        Scanner scanner = new Scanner(System.in);
+        input = scanner.nextLong();
+    }
+
+    public void paint(Graphics g) {
+        g.drawString("Entered long integer: " + input, 20, 20);
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Displays the entered long integer on the applet.<br> Example: If the user enters 1234567890123, the output will be: "Entered long integer: 1234567890123"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>9. Get all characters from the file and display on the screen</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.applet.Applet;
+import java.awt.*;
+import java.io.*;
+
+public class FileReadApplet extends Applet {
+    StringBuilder input = new StringBuilder();
+
+    public void init() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("input.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                input.append(line).append("\n");
+            }
+        } catch (IOException e) {
+            input.append("Error reading file.");
+        }
+    }
+
+    public void paint(Graphics g) {
+        g.drawString(input.toString(), 20, 20);
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Displays all characters from the file on the applet.<br> Example: If "input.txt" contains:<br> ``` Hello World ``` The output will be:<br> "Hello
+                <br>World"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>10. Get all characters from the file, count number of lines, words, characters and display on the screen</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.applet.Applet;
+import java.awt.*;
+import java.io.*;
+
+public class FileStatsApplet extends Applet {
+    StringBuilder input = new StringBuilder();
+    int lineCount = 0, wordCount = 0, charCount = 0;
+
+    public void init() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("input.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                input.append(line).append("\n");
+                lineCount++;
+                wordCount += line.split("\\s+").length;
+                charCount += line.length();
+            }
+        } catch (IOException e) {
+            input.append("Error reading file.");
+        }
+    }
+
+    public void paint(Graphics g) {
+        g.drawString(input.toString(), 20, 20);
+        g.drawString("Lines: " + lineCount, 20, 80);
+        g.drawString("Words: " + wordCount, 20, 100);
+        g.drawString("Characters: " + charCount, 20, 120);
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Displays all characters, along with line, word, and character counts from the file.<br> Example: If "input.txt" contains:<br> ``` Hello World Welcome to Java ``` The output will be:<br> "Hello World<br>Welcome to Java<br>Lines:
+                2
+                <br>Words: 5<br>Characters: 30"
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

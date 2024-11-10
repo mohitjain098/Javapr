@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Functions Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        
+        .question {
+            background-color: #e6f3ff;
+            border: 1px solid #cce0ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .question h2 {
+            font-size: 1.2em;
+            color: #004c99;
+        }
+        
+        .solution {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+        
+        .solution pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .output {
+            background-color: #e9ffe9;
+            border: 1px solid #c6e6c6;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+            color: #3b763b;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="content">
+            <h2>Java Functions Practice</h2>
+        </div>
+    </header>
+
+    <!-- Question 1 -->
+    <div class="question">
+        <h4>1. Write a Java method to find the smallest number among three numbers.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+public class SmallestOfThree {
+    public static void main(String[] args) {
+        System.out.println("Smallest number: " + smallest(5, 2, 8));
+    }
+
+    public static int smallest(int a, int b, int c) {
+        return Math.min(a, Math.min(b, c));
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Smallest number: 2
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <h4>2. Write a Java method to compute the average of three numbers.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+public class AverageOfThree {
+    public static void main(String[] args) {
+        System.out.println("Average: " + average(5, 10, 15));
+    }
+
+    public static double average(int a, int b, int c) {
+        return (a + b + c) / 3.0;
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Average: 10.0
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+        <h4>3. Write a Java method to display the middle character of a string.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+public class MiddleCharacter {
+    public static void main(String[] args) {
+        System.out.println("Middle character: " + middleChar("Hello"));
+    }
+
+    public static String middleChar(String str) {
+        int len = str.length();
+        if (len % 2 == 0) {
+            return String.valueOf(str.charAt(len / 2 - 1));
+        } else {
+            return str.charAt(len / 2) + "" + str.charAt(len / 2);
+        }
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Middle character: l
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+        <h4>4. Write a Java method to count all the words in a string.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+public class WordCount {
+    public static void main(String[] args) {
+        System.out.println("Word count: " + countWords("Hello World! This is Java."));
+    }
+
+    public static int countWords(String str) {
+        return str.split("\\s+").length;
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Word count: 6
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+        <h4>5. Write a Java method to compute the future investment value at a given interest rate for a specified number of years.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+public class InvestmentValue {
+    public static void main(String[] args) {
+        double futureValue = calculateFutureValue(1000, 0.05, 10);
+        System.out.println("Future investment value: " + futureValue);
+    }
+
+    public static double calculateFutureValue(double investment, double interestRate, int years) {
+        return investment * Math.pow(1 + interestRate, years);
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Future investment value: 1628.894626777442
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+        <h4>6. Write a Java method to print characters between two characters (i.e., A to P).</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+public class CharactersBetween {
+    public static void main(String[] args) {
+        printCharacters('A', 'P');
+    }
+
+    public static void printCharacters(char start, char end) {
+        for (char c = start; c <= end; c++) {
+            System.out.print(c + " ");
+        }
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: A B C D E F G H I J K L M N O P
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+        <h4>7. Write a Java method to check whether a string is a valid password.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+public class ValidPassword {
+    public static void main(String[] args) {
+        System.out.println("Is valid password: " + isValidPassword("Password123!"));
+    }
+
+    public static boolean isValidPassword(String password) {
+        return password.length() >= 8 && password.matches(".*[0-9].*") && password.matches(".*[!@#$%^&*].*");
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Is valid password: true
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question">
+        <h4>8. Write a Java method to display the current date and time.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class CurrentDateTime {
+    public static void main(String[] args) {
+        System.out.println("Current date and time: " + getCurrentDateTime());
+    }
+
+    public static String getCurrentDateTime() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        return LocalDateTime.now().format(formatter);
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Current date and time: [current date and time will appear here]
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question">
+        <h4>9. Write a Java method to find all twin prime numbers less than 100.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+public class TwinPrimes {
+    public static void main(String[] args) {
+        findTwinPrimes(100);
+    }
+
+    public static void findTwinPrimes(int limit) {
+        for (int i = 3; i < limit; i++) {
+            if (isPrime(i) && isPrime(i + 2)) {
+                System.out.println("(" + i + ", " + (i + 2) + ")");
+            }
+        }
+    }
+
+    public static boolean isPrime(int n) {
+        if (n < 2) return false;
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: (3, 5) (5, 7) (11, 13) (17, 19) (29, 31) (41, 43) (59, 61) (71, 73) (79, 81)
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question">
+        <h4>10. Write a Java method to count the number of digits in an integer with the value 2.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+public class DigitCount {
+    public static void main(String[] args) {
+        System.out.println("Digit count: " + countDigits(123456));
+    }
+
+    public static int countDigits(int number) {
+        return String.valueOf(number).length();
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Digit count: 6
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 11 -->
+    <div class="question">
+        <h4>11. Write a Java method that accepts three integers and checks whether they are consecutive or not.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+public class ConsecutiveNumbers {
+    public static void main(String[] args) {
+        System.out.println("Are consecutive: " + areConsecutive(4, 5, 6));
+    }
+
+    public static boolean areConsecutive(int a, int b, int c) {
+        return (a + 1 == b && b + 1 == c) || (b + 1 == a && a + 1 == c) || (c + 1 == a && a + 1 == b);
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Are consecutive: true
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 12 -->
+    <div class="question">
+        <h4>12. Write a Java method that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+public class MiddlePoint {
+    public static void main(String[] args) {
+        System.out.println("Is middle point: " + isMiddlePoint(2, 4, 6));
+    }
+
+    public static boolean isMiddlePoint(int a, int b, int c) {
+        return a + c == 2 * b || b + c == 2 * a || a + b == 2 * c;
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: Is middle point: true
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 13 -->
+    <div class="question">
+        <h4>13. Write a Java method that checks whether all the characters in a given string are vowels (a, e, i, o, u).</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+public class AllVowels {
+    public static void main(String[] args) {
+        System.out.println("All characters are vowels: " + areAllVowels("aeiou"));
+    }
+
+    public static boolean areAllVowels(String str) {
+        for (char c : str.toCharArray()) {
+            if (c != 'a' && c != 'e' && c != 'i' && c != 'o' && c != 'u') {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+            </code></pre>
+            <div class="output">
+                Output: All characters are vowels: true
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java String Programs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        
+        .question {
+            background-color: #e6f3ff;
+            border: 1px solid #cce0ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .question h2 {
+            font-size: 1.2em;
+            color: #004c99;
+        }
+        
+        .solution {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+        
+        .solution pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .output {
+            background-color: #e9ffe9;
+            border: 1px solid #c6e6c6;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+            color: #3b763b;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="content">
+            <h2>Java Practice - Strings</h2>
+        </div>
+    </header>
+    <main>
+        <div class="question">
+            <h2>1. Program to Check if a String contains only digits</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+import java.util.Scanner;
+
+public class CheckDigits {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        
+        if (input.matches("\\d+")) {
+            System.out.println("The string contains only digits.");
+        } else {
+            System.out.println("The string contains non-digit characters.");
+        }
+        
+        scanner.close();
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: The string contains only digits.
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>2. Program to perform Deep Copy for String</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+public class DeepCopyString {
+    public static void main(String[] args) {
+        String original = "Hello, World!";
+        String copy = new String(original); // Deep copy
+        System.out.println("Original: " + original);
+        System.out.println("Copy: " + copy);
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: Original: Hello, World!<br>Copy: Hello, World!
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>3. Program to prove String is immutable programmatically</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+public class StringImmutability {
+    public static void main(String[] args) {
+        String str = "Hello";
+        str.concat(", World!"); // This doesn't change the original string
+        System.out.println("Original String: " + str);
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: Original String: Hello
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>4. Program to remove all occurrences of a given character from input String</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+import java.util.Scanner;
+
+public class RemoveCharacter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        System.out.print("Enter a character to remove: ");
+        char ch = scanner.next().charAt(0);
+
+        String result = input.replace(Character.toString(ch), "");
+        System.out.println("Modified string: " + result);
+        
+        scanner.close();
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: Modified string: Hello World!
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>5. Program to append the string using StringBuffer class</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+public class AppendStringBuffer {
+    public static void main(String[] args) {
+        StringBuffer sb = new StringBuffer("Hello");
+        sb.append(", World!");
+        System.out.println(sb);
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: Hello, World!
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>6. Program to insert the string using StringBuffer class</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+public class InsertStringBuffer {
+    public static void main(String[] args) {
+        StringBuffer sb = new StringBuffer("Hello!");
+        sb.insert(5, " World");
+        System.out.println(sb);
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: Hello World!
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>7. Program to Add Characters to a String</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+import java.util.Scanner;
+
+public class AddCharacters {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the original string: ");
+        String original = scanner.nextLine();
+        System.out.print("Enter the characters to add: ");
+        String toAdd = scanner.nextLine();
+
+        String result = original + toAdd;
+        System.out.println("Resulting string: " + result);
+        
+        scanner.close();
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: Resulting string: Hello World!
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>8. Program to Add Characters to a String Again</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+import java.util.Scanner;
+
+public class AddCharactersAgain {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the original string: ");
+        String original = scanner.nextLine();
+        System.out.print("Enter the characters to add: ");
+        String toAdd = scanner.nextLine();
+
+        String result = original + toAdd;
+        System.out.println("Resulting string: " + result);
+        
+        scanner.close();
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: Resulting string: Hello Again!
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>9. Program to Check Anagram</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class AnagramChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first string: ");
+        String str1 = scanner.nextLine();
+        System.out.print("Enter second string: ");
+        String str2 = scanner.nextLine();
+
+        char[] arr1 = str1.replaceAll("\\s", "").toLowerCase().toCharArray();
+        char[] arr2 = str2.replaceAll("\\s", "").toLowerCase().toCharArray();
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        if (Arrays.equals(arr1, arr2)) {
+            System.out.println("The strings are anagrams.");
+        } else {
+            System.out.println("The strings are not anagrams.");
+        }
+        
+        scanner.close();
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: The strings are anagrams.
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>10. Program to check whether a string is a Palindrome</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+import java.util.Scanner;
+
+public class PalindromeChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String original = scanner.nextLine();
+        String reversed = new StringBuilder(original).reverse().toString();
+
+        if (original.equals(reversed)) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+        
+        scanner.close();
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: The string is a palindrome.
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>11. Program to print the characters from a string</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+public class PrintCharacters {
+    public static void main(String[] args) {
+        String str = "Hello";
+        for (char ch : str.toCharArray()) {
+            System.out.println(ch);
+        }
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: H<br>e<br>l<br>l<br>o
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>12. Program to print the characters from a string using the StringBuilder class</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+public class PrintCharactersStringBuilder {
+    public static void main(String[] args) {
+        StringBuilder str = new StringBuilder("Hello");
+        for (int i = 0; i < str.length(); i++) {
+            System.out.println(str.charAt(i));
+        }
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: H<br>e<br>l<br>l<br>o
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>13. Program to print the given string in reverse</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+public class ReverseString {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        String reversed = new StringBuilder(str).reverse().toString();
+        System.out.println("Reversed: " + reversed);
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: Reversed: !dlroW ,olleH
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>14. Program to reverse a string</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+public class ReverseStringSimple {
+    public static void main(String[] args) {
+        String str = "Hello";
+        String reversed = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed += str.charAt(i);
+        }
+        System.out.println("Reversed: " + reversed);
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: Reversed: olleH
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>15. Program to get unique characters from string</h2>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+import java.util.LinkedHashSet;
+
+public class UniqueCharacters {
+    public static void main(String[] args) {
+        String str = "Hello World!";
+        LinkedHashSet<Character> set = new LinkedHashSet<>();
+
+        for (char c : str.toCharArray()) {
+            set.add(c);
+        }
+
+        StringBuilder unique = new StringBuilder();
+        for (char c : set) {
+            unique.append(c);
+        }
+        System.out.println("Unique characters: " + unique);
+    }
+}
+                    </code></pre>
+                <div class="output">
+                    Output: Unique characters: Helo Wrd!
+                </div>
+            </div>
+        </div>
+        </div>
+
+</body>
+
+</html>

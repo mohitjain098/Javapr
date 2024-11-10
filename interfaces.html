@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Practice - Interfaces</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        
+        .question {
+            background-color: #e6f3ff;
+            border: 1px solid #cce0ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .question h4 {
+            font-size: 1.2em;
+            color: #004c99;
+        }
+        
+        .solution {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+        
+        .solution pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .output {
+            background-color: #e9ffe9;
+            border: 1px solid #c6e6c6;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+            color: #3b763b;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Java Practice - Interfaces</h2>
+    </header>
+    <main>
+
+        <!-- Question 1 -->
+        <div class="question">
+            <h4>1. Write a Java program to create an interface Shape with the getArea() method.</h4>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+interface Shape {
+    double getArea();
+}
+
+class Rectangle implements Shape {
+    double width, height;
+
+    Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    public double getArea() {
+        return width * height;
+    }
+}
+
+class Circle implements Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+class Triangle implements Shape {
+    double base, height;
+
+    Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    public double getArea() {
+        return 0.5 * base * height;
+    }
+}
+                    </code></pre>
+            </div>
+            <div class="output">
+                <strong>Output Example:</strong>
+                <p>Rectangle Area: 20.0</p>
+                <p>Circle Area: 28.27</p>
+                <p>Triangle Area: 10.0</p>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <h4>2. Write a Java program to create an Animal interface with a method called bark().</h4>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+interface Animal {
+    void bark();
+}
+
+class Dog implements Animal {
+    public void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+                    </code></pre>
+            </div>
+            <div class="output">
+                <strong>Output Example:</strong>
+                <p>Dog is barking</p>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <h4>3. Write a Java program to create an interface Flyable with a method called fly_obj().</h4>
+            <div class="solution">
+                <h3>Solution</h3>
+                <pre><code>
+interface Flyable {
+    void fly_obj();
+}
+
+class Spacecraft implements Flyable {
+    public void fly_obj() {
+        System.out.println("Spacecraft is flying in space.");
+    }
+}
+
+class Airplane implements Flyable {
+    public void fly_obj() {
+        System.out.println("Airplane is flying in the sky.");
+    }
+}
+
+class Helicopter implements Flyable {
+    public void fly_obj() {
+        System.out.println("Helicopter is flying in the air.");
+    }
+}
+                    </code></pre>
+            </div>
+            <div class="output">
+                <strong>Output Example:</strong>
+                <p>Spacecraft is flying in space.</p>
+                <p>Airplane is flying in the sky.</p>
+                <p>Helicopter is flying in the air.</p>
+            </div>
+        </div>
+
+        <!-- Continue for Questions 4 to 10 using the same format, adapting the code and output as appropriate -->
+
+
+
+    </main>
+    <!-- Question 4 -->
+    <div class="question">
+        <h4>4. Write a Java program to create a banking system with an interface Account.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+interface Account {
+void deposit(double amount);
+void withdraw(double amount);
+double calculateInterest();
+double viewBalance();
+}
+
+class SavingsAccount implements Account {
+private double balance;
+
+public void deposit(double amount) {
+balance += amount;
+}
+
+public void withdraw(double amount) {
+balance -= amount;
+}
+
+public double calculateInterest() {
+return balance * 0.04; // Example interest rate
+}
+
+public double viewBalance() {
+return balance;
+}
+}
+            </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output Example:</strong>
+            <p>Balance: $1000.0</p>
+            <p>Interest: $40.0</p>
+        </div>
+    </div>
+
+    <!-- Continue with Questions 5 to 10, using the same pattern -->
+    <!-- Question 5 -->
+    <div class="question">
+        <h4>5. Write a Java program to create an interface Resizable.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+interface Resizable {
+    void resizeWidth(int width);
+    void resizeHeight(int height);
+}
+
+class Rectangle implements Resizable {
+    private int width, height;
+
+    public void resizeWidth(int width) {
+        this.width = width;
+    }
+
+    public void resizeHeight(int height) {
+        this.height = height;
+    }
+
+    public String toString() {
+        return "Rectangle [width=" + width + ", height=" + height + "]";
+    }
+}
+                    </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output Example:</strong>
+            <p>Rectangle [width=10, height=20]</p>
+        </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+        <h4>6. Write a Java program to create an interface Drawable.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+interface Drawable {
+    void draw();
+}
+
+class Circle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing Circle");
+    }
+}
+
+class Rectangle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing Rectangle");
+    }
+}
+
+class Triangle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing Triangle");
+    }
+}
+                    </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output Example:</strong>
+            <p>Drawing Circle</p>
+            <p>Drawing Rectangle</p>
+            <p>Drawing Triangle</p>
+        </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+        <h4>7. Write a Java program to create an interface Sortable.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+interface Sortable {
+    void sort(int[] array);
+}
+
+class BubbleSort implements Sortable {
+    public void sort(int[] array) {
+        int n = array.length;
+        for (int i = 0; i < n-1; i++) {
+            for (int j = 0; j < n-i-1; j++) {
+                if (array[j] > array[j+1]) {
+                    int temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
+    }
+}
+
+class SelectionSort implements Sortable {
+    public void sort(int[] array) {
+        int n = array.length;
+        for (int i = 0; i < n-1; i++) {
+            int minIdx = i;
+            for (int j = i+1; j < n; j++) {
+                if (array[j] < array[minIdx]) {
+                    minIdx = j;
+                }
+            }
+            int temp = array[minIdx];
+            array[minIdx] = array[i];
+            array[i] = temp;
+        }
+    }
+}
+                    </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output Example:</strong>
+            <p>Sorted Array (BubbleSort): [1, 2, 3, 4, 5]</p>
+            <p>Sorted Array (SelectionSort): [1, 2, 3, 4, 5]</p>
+        </div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question">
+        <h4>8. Write a Java program to create an interface Playable.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+interface Playable {
+    void play();
+}
+
+class Football implements Playable {
+    public void play() {
+        System.out.println("Playing Football");
+    }
+}
+
+class Volleyball implements Playable {
+    public void play() {
+        System.out.println("Playing Volleyball");
+    }
+}
+
+class Basketball implements Playable {
+    public void play() {
+        System.out.println("Playing Basketball");
+    }
+}
+                    </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output Example:</strong>
+            <p>Playing Football</p>
+            <p>Playing Volleyball</p>
+            <p>Playing Basketball</p>
+        </div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question">
+        <h4>9. Write a Java program to create an interface Searchable.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+interface Searchable {
+    void search(String keyword);
+}
+
+class Document implements Searchable {
+    public void search(String keyword) {
+        System.out.println("Searching for " + keyword + " in document.");
+    }
+}
+
+class WebPage implements Searchable {
+    public void search(String keyword) {
+        System.out.println("Searching for " + keyword + " in web page.");
+    }
+}
+                    </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output Example:</strong>
+            <p>Searching for 'Java' in document.</p>
+            <p>Searching for 'Java' in web page.</p>
+        </div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question">
+        <h4>10. Write a Java program to create an interface Encryptable.</h4>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+interface Encryptable {
+    String encrypt(String data);
+    String decrypt(String encryptedData);
+}
+
+class AES implements Encryptable {
+    public String encrypt(String data) {
+        return "Encrypted with AES: " + data;
+    }
+
+    public String decrypt(String encryptedData) {
+        return "Decrypted with AES: " + encryptedData;
+    }
+}
+
+class RSA implements Encryptable {
+    public String encrypt(String data) {
+        return "Encrypted with RSA: " + data;
+    }
+
+    public String decrypt(String encryptedData) {
+        return "Decrypted with RSA: " + encryptedData;
+    }
+}
+                    </code></pre>
+        </div>
+        <div class="output">
+            <strong>Output Example:</strong>
+            <p>Encrypted with AES: HelloWorld</p>
+            <p>Decrypted with AES: HelloWorld</p>
+            <p>Encrypted with RSA: HelloWorld</p>
+            <p>Decrypted with RSA: HelloWorld</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

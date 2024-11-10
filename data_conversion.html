@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Conversion Questions and Solutions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        
+        .question {
+            background-color: #e6f3ff;
+            border: 1px solid #cce0ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .question h2 {
+            font-size: 1.2em;
+            color: #004c99;
+        }
+        
+        .solution {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+        
+        .solution pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .output {
+            background-color: #e9ffe9;
+            border: 1px solid #c6e6c6;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+            color: #3b763b;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Java Data Conversion Questions and Solutions</h1>
+
+    <div class="question">
+        <h2>1. How to convert String to int</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+// Conversion Example
+String str = "123";
+int result = Integer.parseInt(str);
+System.out.println(result);
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> 123
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>2. How to convert int to String</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+// Conversion Example
+int number = 123;
+String result = Integer.toString(number);
+System.out.println(result);
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> "123"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>3. How to convert String to long</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+// Conversion Example
+String str = "123456789";
+long result = Long.parseLong(str);
+System.out.println(result);
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> 123456789
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>4. How to convert long to String</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+// Conversion Example
+long number = 123456789L;
+String result = Long.toString(number);
+System.out.println(result);
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> "123456789"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>5. How to convert String to float</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+// Conversion Example
+String str = "12.34";
+float result = Float.parseFloat(str);
+System.out.println(result);
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> 12.34
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>6. How to convert float to String</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+// Conversion Example
+float number = 12.34f;
+String result = Float.toString(number);
+System.out.println(result);
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> "12.34"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>7. How to convert String to double</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+// Conversion Example
+String str = "12.34";
+double result = Double.parseDouble(str);
+System.out.println(result);
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> 12.34
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>8. How to convert double to String</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+// Conversion Example
+double number = 12.34;
+String result = Double.toString(number);
+System.out.println(result);
+                </code></pre>
+            <div class="output">
+                <strong>Output:</strong> "12.34"
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+    <div class="question">
+        <h2>9. How to convert String to Date</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    import java.text.SimpleDateFormat;
+    import java.util.Date;
+    
+    String str = "2024-11-03";
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+    Date result = formatter.parse(str);
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> Sun Nov 03 00:00:00 UTC 2024
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>10. How to convert Date to String</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    import java.text.SimpleDateFormat;
+    import java.util.Date;
+    
+    Date date = new Date();
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+    String result = formatter.format(date);
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> "2024-11-03"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>11. How to convert String to char</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    String str = "Hello";
+    char result = str.charAt(0);
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> H
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>12. How to convert char to String</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    char ch = 'H';
+    String result = Character.toString(ch);
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> "H"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>13. How to convert String to Object</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    String str = "Hello World";
+    Object result = str;
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> "Hello World"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>14. How to convert Object to String</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    Object obj = "Hello World";
+    String result = obj.toString();
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> "Hello World"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>15. How to convert int to long</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    int number = 123;
+    long result = (long) number;
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> 123
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>16. How to convert long to int</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    long number = 123L;
+    int result = (int) number;
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> 123
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>17. How to convert int to double</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    int number = 123;
+    double result = (double) number;
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> 123.0
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>18. How to convert double to int</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    double number = 123.45;
+    int result = (int) number;
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> 123
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>19. How to convert char to int</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    char ch = '9';
+    int result = Character.getNumericValue(ch);
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> 9
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>20. How to convert int to char</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    int num = 65;
+    char result = (char) num;
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> A
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>21. How to convert String to boolean</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    String str = "true";
+    boolean result = Boolean.parseBoolean(str);
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> true
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>22. How to convert boolean to String</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    boolean bool = true;
+    String result = Boolean.toString(bool);
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> "true"
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>23. How to convert Date to Timestamp</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    import java.util.Date;
+    import java.sql.Timestamp;
+    
+    Date date = new Date();
+    Timestamp result = new Timestamp(date.getTime());
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> Timestamp value of current date and time
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>24. How to convert Timestamp to Date</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    import java.sql.Timestamp;
+    import java.util.Date;
+    
+    Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+    Date result = new Date(timestamp.getTime());
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> Date value of the timestamp
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>25. How to convert Binary to Decimal</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    String binary = "1010";
+    int result = Integer.parseInt(binary, 2);
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> 10
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>26. How to convert Decimal to Binary</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    int decimal = 10;
+    String result = Integer.toBinaryString(decimal);
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> 1010
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>27. How to convert Hex to Decimal</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    String hex = "A";
+    int result = Integer.parseInt(hex, 16);
+    System.out.println(result);
+            </code></pre>
+            < <div class="output">
+                <strong>Output:</strong> 10
+        </div>
+    </div>
+    </div>
+
+    <div class="question">
+        <h2>28. How to convert Decimal to Hex</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    int decimal = 10;
+    String result = Integer.toHexString(decimal);
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> a
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>29. How to convert Octal to Decimal</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    String octal = "12";
+    int result = Integer.parseInt(octal, 8);
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> 10
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2>30. How to convert Decimal to Octal</h2>
+        <div class="solution">
+            <h3>Solution</h3>
+            <pre><code>
+    // Conversion Example
+    int decimal = 10;
+    String result = Integer.toOctalString(decimal);
+    System.out.println(result);
+            </code></pre>
+            <div class="output">
+                <strong>Output:</strong> 12
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

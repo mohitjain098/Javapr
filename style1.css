@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color:rgb(111, 24, 193);
+    color:black;
+
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 400;
+
+}
+
+.block-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.block-list li {
+    margin: 15px 0;
+}
+
+.block-list a {
+    display: block;
+    padding: 20px;
+    background-color: #000307; /* Button color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.block-list a:hover {
+    background-color: #690790; /* Darker shade on hover */
+}
